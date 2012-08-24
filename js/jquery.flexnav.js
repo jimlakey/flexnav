@@ -12,7 +12,7 @@
 (function($) {
 	$.fn.flexNav = function(options) {
 	    var settings = $.extend({
-	        'breakpoint': '800',
+	        'breakpoint': '50em',
 	        'animationSpeed': 'fast'
 	    },
 	    options);
