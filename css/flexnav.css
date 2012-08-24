@@ -134,7 +134,7 @@ p {font-size: 14px;margin-bottom: 16px; line-height: 18px;}
 	display: block;
 }
 
-@media all and (min-width: 50em) {
+@media all and (min-width: 800px) {
 	p {font-size: 100%; margin-bottom: 1.5em; line-height: 1.25em;}	
 	.flexNav-touch [role='navigation'],
 	.flexNav-no-touch [role='navigation'] {
