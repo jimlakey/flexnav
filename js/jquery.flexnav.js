@@ -56,7 +56,8 @@
 	    // Toggle for nav menu
 	    $('.menu-button').click(function() {
 	        $this.slideToggle(settings.animationSpeed);
-	        $(this).toggleClass("active"); /* for arrow animation */
+	        // for arrow animation
+	        $(this).toggleClass("active"); 
 	    });
 	
 	    // Closes nav menu after links clicked/touched
@@ -67,7 +68,8 @@
 	    // Toggle click for sub-menus on touch and or small screens
 	    $('.item-with-ul').click(function() {
 	        $(this).find('.sub-menu').slideToggle(settings.animationSpeed);
-	        $(this).toggleClass("active"); /* for arrow animation */
+	        // for arrow animation
+	        $(this).toggleClass("active"); 
 	    });
 
 	    // Call on resize.
