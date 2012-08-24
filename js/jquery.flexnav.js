@@ -46,10 +46,11 @@
 	    }
 
 	    // Set class on html element for touch/no-touch
+	    // Keeping class name specific to avoid modernizr clash?
 	    if (is_touch_device()) {
-	        $('html').removeClass('flexNav-no-touch').addClass('flexNav-touch');
-	    // } else {
-	    //     $('html').addClass('flexNav-no-touch');
+	        $('html').removeClass('flexNav-no-js').addClass('flexNav-touch');
+	    } else {
+	        $('html').removeClass('flexNav-no-js').addClass('flexNav-no-touch');
 	    }
 
 	    // Toggle for nav menu
