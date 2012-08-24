@@ -41,9 +41,9 @@
 
 	    // Set class on html element for touch/no-touch
 	    if (is_touch_device()) {
-	        $('html').addClass('flexNav-touch');
-	    } else {
-	        $('html').addClass('flexNav-no-touch');
+	        $('html').removeClass('flexNav-no-touch').addClass('flexNav-touch');
+	    // } else {
+	    //     $('html').addClass('flexNav-no-touch');
 	    }
 
 	    // Toggle for nav menu
