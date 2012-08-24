@@ -22,12 +22,18 @@
 	    var resizer = function() {
 	        if ($(window).width() < settings.breakpoint) {
 	            $("body").removeClass("lg-screen").addClass("sm-screen");
-	        }
+			}
 	        else {
 	            $("body").removeClass("sm-screen").addClass("lg-screen");
-	        }
-	        if ($(window).width() >= settings.breakpoint) {
-	            $this.show();
+
+	            // to fix display:none/block carying over on window size change
+	            $(".sub-menu").css({'display':''});
+	            $("ul#nav").css({'display':''});
+	            
+	            // if change from small to large with menu open, reset arrows
+	            $('.item-with-ul').removeClass("active");
+	            $('.menu-button').removeClass("active");
+
 	        }
 	    };
 
