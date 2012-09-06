@@ -8,8 +8,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -33,10 +33,10 @@ p {font-size: 14px;margin-bottom: 16px; line-height: 18px;}
 .flexNav-nav {
 	margin: 0 auto;
 	width: 100%;
-	background-color: #333;		
+	background-color: #333;
 }
 .flexNav-touch .flexNav-nav,
-.flexNav-no-touch .flexNav-nav {	
+.flexNav-no-touch .flexNav-nav {
 	display: none;
 }
 .menu-button {
@@ -68,28 +68,28 @@ p {font-size: 14px;margin-bottom: 16px; line-height: 18px;}
 .flexNav-nav li {
 	position: relative;
 	list-style: none;
-	display: block;	
-	background-color: #333;	
-	width: 100%;		
+	display: block;
+	background-color: #333;
+	width: 100%;
 }
 
-.flexNav-nav li.item-with-ul {	
-	background-color: #222;	
-			
+.flexNav-nav li.item-with-ul {
+	background-color: #222;
+
 }
 
 .flexNav-nav li a {
 	margin-right: 20%;
 	display: block;
 	color: #ddd;
-	border-bottom: 1px solid #111;			
+	border-bottom: 1px solid #111;
 }
 .flexNav-no-js .flexNav-nav li a {
-	margin-right: 0;		
+	margin-right: 0;
 }
 
 .flexNav-nav li a.link-with-ul {
-	border-right: 1px solid #222;		
+	border-right: 1px solid #222;
 }
 
 .flexNav-nav .top-level a {
@@ -107,19 +107,19 @@ p {font-size: 14px;margin-bottom: 16px; line-height: 18px;}
 }
 .flexNav-nav li ul li {
 	float: none;
-	width: 100%;			
+	width: 100%;
 }
 
 .flexNav-nav li ul li a {
 	display: block;
 	background-color: #333;
-			
+
 }
 
 .flexNav-nav .item-with-ul {
 	background-image: url('../images/arrow-left.png');
 	background-repeat: no-repeat;
-	background-position: 93% 18px;	
+	background-position: 93% 18px;
 }
 .flexNav-nav .item-with-ul.active {
 	background-image: url('../images/arrow-down.png');
@@ -131,11 +131,11 @@ p {font-size: 14px;margin-bottom: 16px; line-height: 18px;}
 	display: block;
 }
 
-@media all and (min-width: 800px) {
-	p {font-size: 100%; margin-bottom: 1.5em; line-height: 1.25em;}	
+@media all and (min-width: 50em) {
+	p {font-size: 100%; margin-bottom: 1.5em; line-height: 1.25em;}
 	.flexNav-touch .flexNav-nav,
 	.flexNav-no-touch .flexNav-nav {
-		display: block;	
+		display: block;
 	}
 	.menu-button {
 		display: none;
@@ -144,51 +144,51 @@ p {font-size: 14px;margin-bottom: 16px; line-height: 18px;}
 		position: relative;
 		list-style: none;
 		float: left;
-		display: block;	
-		background-color: #333;	
-		width: 20%;		
+		display: block;
+		background-color: #333;
+		width: 20%;
 	}
 	.flexNav-no-touch .item-with-ul:hover, .flexNav-no-js .item-with-ul:hover {
 		background-image: url('../images/arrow-down.png');
 	}
-	.flexNav-no-touch .item-with-ul:hover > ul, .flexNav-no-js .item-with-ul:hover > ul  { 
+	.flexNav-no-touch .item-with-ul:hover > ul, .flexNav-no-js .item-with-ul:hover > ul  {
 		opacity: 1;
-		top: 3.1em;	
-		position: absolute;	
-	}	
+		top: 3.1em;
+		position: absolute;
+	}
 	.flexNav-nav li a {
 		border-left: 1px solid #000;
-		border-bottom: none;		
+		border-bottom: none;
 	}
 	.flexNav-no-js .flexNav-nav li a {
-		margin-right: 20%;		
+		margin-right: 20%;
 	}
 	.flexNav-no-touch .flexNav-nav li ul {
-		position: absolute; 
+		position: absolute;
 		top: auto;
 		left: 0;
 		opacity: 0;
 		visibility: hidden;
 		height: 1px;
-		z-index: 1;			
+		z-index: 1;
 	}
 	.flexNav-nav li ul li a {
-		border-bottom: none;	
-	}	
+		border-bottom: none;
+	}
 	.flexNav-touch .flexNav-nav li ul.sub-menu {
-		position: absolute; 
+		position: absolute;
 		top: auto;
 		left: 0;
 		display: none;
-		z-index: 1;					
-	}	
+		z-index: 1;
+	}
 
-	.flexNav-no-touch .item-with-ul:hover > ul, .flexNav-no-js .item-with-ul:hover > ul 	 { 
+	.flexNav-no-touch .item-with-ul:hover > ul, .flexNav-no-js .item-with-ul:hover > ul 	 {
 		visibility: visible;
 		opacity: 1;
 		height: auto;
-		display: block;	
+		display: block;
 		border-right: 1px solid #000;
-		border-bottom: 1px solid #000;		
-	}			
+		border-bottom: 1px solid #000;
+	}
 }

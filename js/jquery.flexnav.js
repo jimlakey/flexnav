@@ -1,9 +1,9 @@
 /*global jQuery */
-/*!	
+/*!
 * FlexNav.js 0.3
 *
 * Copyright 2012, Jason Weaver http://jasonweaver.name
-* Released under the WTFPL license 
+* Released under the WTFPL license
 * http://sam.zoy.org/wtfpl/
 *
 * Date: Sunday July 8
@@ -12,7 +12,6 @@
 (function($) {
 	$.fn.flexNav = function(options) {
 	    var settings = $.extend({
-	        'breakpoint': '800',
 	        'animationSpeed': 'fast'
 	    },
 	    options);
@@ -20,21 +19,22 @@
 	    var $this = $(this);
 
 	    var resizer = function() {
-	        if ($(window).width() < settings.breakpoint) {
-	            $("body").removeClass("lg-screen").addClass("sm-screen");
-			}
-	        else {
-	            $("body").removeClass("sm-screen").addClass("lg-screen");
 
-	            // to fix display:none/block carying over on window size change
-	            $(".sub-menu").css({'display':''});
-	            $(".flexNav-nav").css({'display':''});
-	            
-	            // if change from small to large with menu open, reset arrows
-	            $('.item-with-ul').removeClass("active");
-	            $('.menu-button').removeClass("active");
+		        if ($('.flexNav-nav li').css('float')==='none') {
+		            $("body").removeClass("lg-screen").addClass("sm-screen");
 
-	        }
+				} else {
+		            $("body").removeClass("sm-screen").addClass("lg-screen");
+
+		            // to fix display:none/block carying over on window size change
+		            $(".sub-menu").css({'display':''});
+		            $(".flexNav-nav").css({'display':''});
+
+		            // if change from small to large with menu open, reset arrows
+		            $('.item-with-ul').removeClass("active");
+		            $('.menu-button').removeClass("active");
+
+		        }
 	    };
 
 	    // Call once to set.
@@ -57,19 +57,19 @@
 	    $('.menu-button').click(function() {
 	        $this.slideToggle(settings.animationSpeed);
 	        // for arrow animation
-	        $(this).toggleClass("active"); 
+	        $(this).toggleClass("active");
 	    });
-	
+
 	    // Closes nav menu after links clicked/touched
 	    $this.find('a').click(function() {
 	        $this.hide();
 	    });
-	
+
 	    // Toggle click for sub-menus on touch and or small screens
 	    $('.item-with-ul').click(function() {
 	        $(this).find('.sub-menu').slideToggle(settings.animationSpeed);
 	        // for arrow animation
-	        $(this).toggleClass("active"); 
+	        $(this).toggleClass("active");
 	    });
 
 	    // Call on resize.
