@@ -1,12 +1,13 @@
 /*global jQuery */
 /*!
+* Based on:
 * FlexNav.js 0.3
 *
 * Copyright 2012, Jason Weaver http://jasonweaver.name
 * Released under the WTFPL license
 * http://sam.zoy.org/wtfpl/
 *
-* Date: Sunday July 8
+* Revised by: Jim lakey http://applecanyondesigns.com
 */
 
 (function($) {
@@ -17,28 +18,6 @@
 	    options);
 
 	    var $this = $(this);
-
-	    var resizer = function() {
-
-		        if ($('.flexNav-nav li').css('float')==='none') {
-		            $("body").removeClass("lg-screen").addClass("sm-screen");
-
-				} else {
-		            $("body").removeClass("sm-screen").addClass("lg-screen");
-
-		            // to fix display:none/block carying over on window size change
-		            $(".sub-menu").css({'display':''});
-		            $(".flexNav-nav").css({'display':''});
-
-		            // if change from small to large with menu open, reset arrows
-		            $('.item-with-ul').removeClass("active");
-		            $('.menu-button').removeClass("active");
-
-		        }
-	    };
-
-	    // Call once to set.
-	    resizer();
 
 	    // Function for testing touch screens
 	    function is_touch_device() {
@@ -53,24 +32,48 @@
 	        $('html').removeClass('flexNav-no-js').addClass('flexNav-no-touch');
 	    }
 
+	    var resizer = function() {
+
+		        if ($('.flexNav-nav li').css('float')==='none') {
+		            $("body").removeClass("lg-screen").addClass("sm-screen");
+		            // To allow toggling on sm-screen
+		            $('.flexNav-no-touch .flexNav-nav .item-with-ul > ul').removeClass('sub-menu-no-tog').addClass('sub-menu');
+
+				} else {
+		            $("body").removeClass("sm-screen").addClass("lg-screen");
+					// To stop menu toggling on lg-screen
+		            $('.flexNav-no-touch .flexNav-nav .item-with-ul > ul').removeClass('sub-menu').addClass('sub-menu-no-tog');
+
+		            // to fix display:none/block carrying over on window size change
+		            $(".sub-menu").css({'display':''});
+		            $(".sub-menu-no-tog").css({'display':''});
+		            $(".flexNav-nav").css({'display':''});
+
+		            // if change from small to large with menu open, reset menu toggle symbols
+		            $('.item-with-ul').removeClass("active");
+		            $('.menu-button').removeClass("active");
+		        }
+	    };
+
+	    // Call once to set.
+	    resizer();
+
+
 	    // Toggle for nav menu
 	    $('.menu-button').click(function() {
-	        $this.slideToggle(settings.animationSpeed);
-	        // for arrow animation
+	       $this.slideToggle(settings.animationSpeed);
+	         // to toggle any animations...
 	        $(this).toggleClass("active");
-	    });
-
-	    // Closes nav menu after links clicked/touched
-	    $this.find('a').click(function() {
-	        $this.hide();
 	    });
 
 	    // Toggle click for sub-menus on touch and or small screens
-	    $('.item-with-ul').click(function() {
-	        $(this).find('.sub-menu').slideToggle(settings.animationSpeed);
-	        // for arrow animation
-	        $(this).toggleClass("active");
-	    });
+
+		    $('.link-with-ul').click(function(event) {
+		    	event.preventDefault();
+		        $(this).parent().find('.sub-menu').slideToggle(settings.animationSpeed);
+		        // to toggle + and -
+		        $(this).parent().toggleClass("active");
+		    });
 
 	    // Call on resize.
 	    $(window).on('resize', resizer);
