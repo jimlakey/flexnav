@@ -34,6 +34,10 @@ p {font-size: 1em;margin-bottom: 1em; line-height: 1.2em;}
 
 /* Typography =============== */
 
+.flexNav-nav li {
+	text-align: left;
+	line-height: 1;
+}
 a:hover {
 	text-decoration: none;
 }
@@ -141,7 +145,7 @@ a:hover {
 	display: none;
 }
 
-@media all and (min-width: 50em) {
+@media all and (min-width: 64em) {
 	p {font-size: 100%; margin-bottom: 1.5em; line-height: 1.25em;}
 	.flexNav-touch .flexNav-nav,
 	.flexNav-no-touch .flexNav-nav {
@@ -150,12 +154,19 @@ a:hover {
 	.menu-button {
 		display: none;
 	}
+	.flexNav-nav li  {
+		line-height: .6;
+	}
 	.flexNav-nav li.top-level {
 		position: relative;
 		list-style: none;
 		float: left;
 		width: auto;
-		padding-right: 2em;
+		padding-right: 1em;
+		line-height: 1.2;
+	}
+	.flexNav-nav li.top-level:last-child {
+		padding-right: 0;
 	}
 	/* reset */
 	.flexNav-nav, .flexNav-nav li,
@@ -177,14 +188,14 @@ a:hover {
 		right: 0;
 		display: block;
 		font-size: .5em;
-		padding: 2em 3em;
+		padding: 22px 20px;
 	}
 	.flexNav-nav .item-with-ul.active:after,
 	.flexNav-no-js .flexNav-nav .item-with-ul.active:after {
 		content: "▼";
 	}
 	.flexNav-nav li ul {
-		width: 10em;
+		width: 16em;
 	}
 	.sub-menu li,
 	.sub-menu-no-tog li {
@@ -210,6 +221,10 @@ a:hover {
 	}
 	.flexNav-nav .top-level > a {
 		color: #73AA62; /* light green */
+	}
+	.flexNav-nav .top-level > a.selected,
+	.flexNav-nav .top-level > a.selected:hover {
+    color: #6b5f1a;
 	}
 	.flexNav-nav .top-level > a:hover {
 		color: #C0413E; /* red */
